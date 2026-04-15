@@ -11,7 +11,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import java.util.Arrays
 // create function to log array values
-    fun logArrValues(arr: Array<String>,limit: Int=0){
+@SuppressLint("SuspiciousIndentation")
+fun logArrValues(arr: Array<String>, limit: Int=0){
         // if statement to check if limit is 0
         if (limit == 0)
             Log.v("Array Values", Arrays.toString(arr))
@@ -19,6 +20,8 @@ import java.util.Arrays
 
         Log.v("Array Values", Arrays.toString(arr.sliceArray(0..limit-1)))
     }
+    // Create function or longest array display here
+
 
 class MainActivity : AppCompatActivity() {
     val teams = arrayOf<String>("Manchester united","Real Madrid","PSG","Bayern Munich","Liverpool")
@@ -31,7 +34,10 @@ class MainActivity : AppCompatActivity() {
         var teamsDisplay = ""
         var count = 0
         //calling logArrValues function
-        logArrValues(teams,2)
+        logArrValues(teams)
+        logArrValues(teams,3)
+        // Call longest array function here
+
         //reassigning top soccer team in array
         teams [0] = "Man Sundowns Fc"
 
