@@ -23,18 +23,29 @@ import kotlin.math.log
 //        Log.v("Array Values", Arrays.toString(arr.sliceArray(0..limit-1)))
 //    }
 // looks for the longest entry in string array
-fun getLongestString(arr: Array<String>): String {
-    var longestLength = 0
-    var longestElement = ""
+//fun getLongestString(arr: Array<String>): String {
+//    var longestLength = 0
+//    var longestElement = ""
+//    for (element in arr) {
+//        if (element.count() > longestLength) {
+//            longestLength = element.count()
+//            longestElement = element
+//        }
+//        }
+//    return longestElement
+//}
+// looks for the shortest entry in string array
+fun getShortestString(arr: Array<String>): String {
+    var shortestLength = 0
+    var shortestElement = ""
     for (element in arr) {
-        if (element.count() > longestLength) {
-            longestLength = element.count()
-            longestElement = element
+        if (element.count() < shortestLength) {
+            shortestLength = element.count()
+            shortestElement = element
         }
-        }
-    return longestElement
+    }
+    return shortestElement
 }
-
 class MainActivity : AppCompatActivity() {
     val teams = arrayOf<String>("Manchester united","Real Madrid","PSG","Bayern Munich","Liverpool")
 
@@ -49,8 +60,11 @@ class MainActivity : AppCompatActivity() {
 //        logArrValues(teams)
 //        logArrValues(teams,3)
         //call the method to find the longest name in array
-        var longestName = getLongestString(teams)
-        Log.v("Longest Name",longestName)
+//        var longestName = getLongestString(teams)
+//        Log.v("Longest Name",longestName)
+        // call the method to find the shortest name in array
+        var shortestName = getShortestString(teams)
+        Log.v("Shortest Name",shortestName)
 
         //reassigning top soccer team in array
         teams [0] = "Man Sundowns Fc"
